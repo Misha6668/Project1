@@ -1,0 +1,13 @@
+mass = ['one', 'two', 'three']
+
+def fun(arr):
+    mass1 = []
+    for i in range(len(arr)-1, -1, -1):
+        mass1.append(arr[i])
+        arr.remove(arr[i])
+        
+    return mass1
+
+
+result = fun(mass)
+print(result)
