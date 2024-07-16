@@ -1,0 +1,23 @@
+mass = [1, 2, 5, 3]
+
+def find(arr):
+    ev = []
+    od = []
+    c = [ev,od]
+    for i in arr:
+        if i % 2 == 0:
+            ev.append(i)
+            
+        else:
+            od.append(i)
+            
+    return c
+    
+
+
+even = len(find(mass)[0])
+
+odd = len(find(mass)[1])
+
+print(f"There are {even} even numbers \nAnd there are {odd} odd numbers")
+        
