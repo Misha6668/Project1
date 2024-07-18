@@ -3,16 +3,23 @@ tx = "ab"
 
 def fun(string):
     string = list(string)
-    for i in range(0, len(string), 1):
-         
-         elem = chr(ord(string[i]) - 32)
-         string.remove(string[i])
-         string.insert(i, elem)
-         
-    return string
-        
-        
-        
-result = fun(tx)
 
-print(fun)
+    for i in range(0, len(string), 1):
+        if ord(string[i]) > 96 and ord(string[i]) < 123:
+            elem = chr(ord(string[i]) - 32)
+            string.remove(string[i])
+            string.insert(i, elem)
+        elif ord(string[i]) > 64 and ord(string[i]) < 91:
+            element = chr(ord(string[i]) + 32)
+            string.remove(string[i])
+            string.insert(i, element)
+        else:
+            print("Error")
+            
+
+    return string
+
+
+result = str(fun(tx))
+
+print(result)
