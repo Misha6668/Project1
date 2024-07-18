@@ -1,0 +1,14 @@
+text = "You are a stundent"
+sym = 'u'
+
+def find(txt, symb):
+    txt = txt.split()
+    for i in txt:
+        i = list(i)
+    for el in txt:
+        if symb == el:
+            print(True)
+        else:
+            print(False)
+
+find(text, sym)
