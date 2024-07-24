@@ -1,0 +1,29 @@
+string = 'you you'
+new_string = 'we'
+old_string = 'you'
+
+def replace(s, old_s, new_s):
+    res = ''
+    i = 0
+    while i < len(s):
+        if s[i:i + len(old_s)] == old_s:
+            res += new_s
+            i += len(old_s)
+            
+        else:
+            res += s[i]
+            i += 1
+            
+    return res
+    
+        
+        
+        
+
+
+
+
+
+result = replace(string, old_string, new_string)
+
+print(result)

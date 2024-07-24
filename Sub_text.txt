@@ -1,0 +1,21 @@
+text = "abcde"
+sub_text = "abc"
+
+def fun(s, sub_s):
+    s = list(s)
+    sub_s = list(sub_s)
+    ch = 0
+    for i in s:
+        for el in sub_s:
+            if i == el:
+                ch += 1
+                
+    if ch == len(sub_s):
+        return "Yes"
+        
+    else:
+        return "Error"
+        
+result = fun(text, sub_text)
+
+print(result)

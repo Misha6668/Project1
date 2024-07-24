@@ -1,0 +1,27 @@
+students = (("Misha", 22, 3, "Moscow"), 
+            ("Lena", 23, 4, "Tyumen"), 
+            ("Tim", 20, 2, "Surgut"), 
+            ("Erik", 21, 5, "Kaliningrad"),
+            ("Yan", 22, 4, "Moscow"), 
+            ("Arina", 24, 5, "Novosibirsk"), 
+            ("David", 19, 2, "Moscow"))
+            
+            
+def good_students(tpl):
+    good = []
+    summ = []
+    for i in range(0, len(tpl), 1):
+        summ.append(tpl[i][2])
+        
+    mid = sum(summ) / len(summ)
+    for el in tpl:
+        if el[2] >= mid:
+            good.append(el[0])
+        else:
+            continue
+        
+    return f"Ученики {good} в этом семестре хорошо учатся!"
+        
+result = good_students(students)    
+        
+print(result)
