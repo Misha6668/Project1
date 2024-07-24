@@ -1,0 +1,29 @@
+a = int(input("Enter first num: "))
+b = int(input("Enter second num: "))
+c = input("Enter action(+, -, *, /, //, %, **): ")
+
+if c == '+':
+    d = a + b
+    print(d)
+    
+elif c == '-':
+    d = a - b
+    print(d)
+    
+elif c == '*':
+    d = a * b
+    print(d)
+elif c == '/':
+    d = a / b
+    print(d)
+elif c == '//':
+    d = a // b
+    print(d)
+elif c == '%':
+    d = a % b
+    print(d)
+elif c == '**':
+    d = a ** b
+    print(d)
+else:
+    print('Error')

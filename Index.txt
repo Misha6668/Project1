@@ -1,0 +1,23 @@
+let = 'b'
+string = "baobab"
+
+def first_last(letter, st):
+    st = list(st)
+    ind = []
+    if letter in st:
+        for i in st:
+            for el in range(0,len(st), 1):
+                if i == letter:
+                    ind.append(el)
+                   
+                
+        return (st.index(letter), ind[len(ind) -1])
+                
+                
+    else:
+        return (None, None)
+    
+    
+result = first_last(let, string)
+
+print(result)

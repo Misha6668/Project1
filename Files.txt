@@ -1,0 +1,44 @@
+import codecs
+from os import read
+
+
+name = "File.txt"
+another = "File2.txt"
+
+    
+
+def write_file(file, txt):
+    try:
+        x = open(file, 'w+')
+        x.writelines(txt)
+        x.close()
+        
+    except:
+        print("Error")
+        
+
+def read_file(file1, lines):
+    mass = []
+    try:
+        d = open(file1, 'r')
+        text = d.readlines()
+        
+        for i in range(0, lines * 2, 1):
+            mass.append(text[i])
+            
+        
+        write_file(another, mass)
+        d.close()
+        
+        
+    except:
+        print('Error')
+        
+
+read_file(name, 5)
+
+
+
+
+
+read_file(name, 1)
