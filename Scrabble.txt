@@ -1,0 +1,25 @@
+string = 'Hello        World'
+points = {1:'AEIOULNSTRАВЕИНОРСТ',
+      	2:'DGДКЛМПУ',
+      	3:'BCMPБГЁЬЯ',
+      	4:'FHVWYЙЫ',
+      	5:'KЖЗХЦЧ',
+      	8:'JZШЭЮ',
+      	10:'QZФЩЪ'}
+
+def game(st):
+    point = 0
+    st = st.upper()
+    for i in st:
+        if i == ' ':
+            continue
+        else:
+            for k, v in points.items():
+                if i in v:
+                    point += k
+                    
+    return point
+    
+result = game(string)
+
+print(result)
