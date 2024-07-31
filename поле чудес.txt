@@ -1,0 +1,55 @@
+import random
+
+
+def game(w, letters):
+    w = list(w)
+    new_w = ''
+    old_w = []
+    for i in w:
+        old_w.append(i)
+    
+    indexes = random.sample(range(len(w)), letters)
+    for i in indexes:
+        new_w += w[i]
+        w[i] = '*'
+        
+        
+    new_w = list(new_w)
+        
+    new_new_w = ''
+    for i in w:
+        new_new_w += i
+        
+    print(f'Masked word is {new_new_w} ')
+    ch = 0
+    num = 1
+    while ch < letters:
+        let = str(input(f'Now try to guess {num} letter: '))
+        if let in new_w:
+            if let == old_w[min(indexes)]:
+                print(f'You succesfully guessed letter {let} ')
+                w[min(indexes)] = let
+                indexes.remove(min(indexes))
+                ch += 1
+                num += 1
+                o_w = ''.join(w)
+                print(f'New word is {o_w}')
+                
+            else:
+                print('Try again! ')
+                
+            
+        else:
+            print('There is no such letter ')
+        
+        
+    res = ''.join(w)
+    if '*' not in res:
+        print(f'You succesfully guessed all the word {res}\nCongratulations! ')
+    
+        
+word = str(input('Enter any word: '))
+stars = int(input('Enter number of letters you want to change: '))
+end = game(word, stars)
+
+print(end)

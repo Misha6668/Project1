@@ -1,0 +1,41 @@
+import math
+
+n = 36
+
+def is_even(num):
+    if num % 2 != 0:
+        return False
+    else:
+        return True
+        
+def is_prime(v):
+    isr = True
+    if v == 2:
+        return True
+    if is_even(v) == False:
+        for i in range(2, int(math.sqrt(v) + 1), 1):
+            if v % i == 0:
+                isr = False
+            else:
+                continue
+    else:
+        isr = False
+    return isr
+        
+
+def mnozh(number):
+    mass = []
+    if is_prime(number) == True:
+        return f'1, {number}'
+    else:
+        for i in range(1, number + 1, 1):
+            if number % i == 0:
+                if is_prime(i) == True:
+                    mass.append(i)
+                else:
+                    continue
+            else:
+                continue
+    return mass
+    
+print(mnozh(n))

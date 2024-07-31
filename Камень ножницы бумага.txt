@@ -1,0 +1,86 @@
+import random 
+def game(games):
+    dictionary = {1 : 'камень', 2 : 'ножницы', 3 : 'бумага'}
+    choose = int(input('Выберите 1 - камень,\n2 - ножницы,\n3 - бyмага:'))
+    robot_choose = int(random.randint(1,3))
+    win1 = 0
+    win2 = 0
+    while True:
+        if win1 < games and win2 < games:
+            if choose <= 3:
+                if choose == 1 and robot_choose == 2:
+                    win1 += 1
+                    print(f'Соперник выбрал {dictionary[robot_choose]}')
+                    print(f'Счёт: {win1} : {win2} ')
+                    print('Вы выиграли!')
+                    choose = int(input('Выберите 1 - камень,\n2 - ножницы,\n3 - бyмага:'))
+                    robot_choose = int(random.randint(1,3))
+                elif choose == 1 and robot_choose == 3:
+                    win2 += 1
+                    print(f'Соперник выбрал {dictionary[robot_choose]}')
+                    print('Вы проиграли!')
+                    print(f'Счёт: {win1} : {win2} ')
+                    choose = int(input('Выберите 1 - камень,\n2 - ножницы,\n3 - бyмага:'))
+                    robot_choose = int(random.randint(1,3))
+                elif choose == 1 and robot_choose == 1:
+                    print(f'Соперник выбрал {dictionary[robot_choose]}')
+                    print('Ничья')
+                    print(f'Счёт: {win1} : {win2} ')
+                    choose = int(input('Выберите 1 - камень,\n2 - ножницы,\n3 - бyмага:'))
+                    robot_choose = int(random.randint(1,3))
+                elif choose == 2 and robot_choose == 1:
+                    win2 += 1
+                    print(f'Соперник выбрал {dictionary[robot_choose]}')
+                    print('Вы проиграли!')
+                    print(f'Счёт: {win1} : {win2} ')
+                    choose = int(input('Выберите 1 - камень,\n2 - ножницы,\n3 - бyмага:'))
+                    robot_choose = int(random.randint(1,3))
+                elif choose == 2 and robot_choose == 2:
+                    print(f'Соперник выбрал {dictionary[robot_choose]}')
+                    print('Ничья')
+                    print(f'Счёт: {win1} : {win2} ')
+                    choose = int(input('Выберите 1 - камень,\n2 - ножницы,\n3 - бyмага:'))
+                    robot_choose = int(random.randint(1,3)) 
+                elif choose == 2 and robot_choose == 3:
+                    win1 += 1
+                    print(f'Соперник выбрал {dictionary[robot_choose]}')
+                    print('Вы выиграли!')
+                    print(f'Счёт: {win1} : {win2} ')
+                    choose = int(input('Выберите 1 - камень,\n2 - ножницы,\n3 - бyмага:'))
+                    robot_choose = int(random.randint(1,3))
+                elif choose == 3 and robot_choose == 1:
+                    win1 += 1
+                    print(f'Соперник выбрал {dictionary[robot_choose]}')
+                    print('Вы выиграли!')
+                    print(f'Счёт: {win1} : {win2} ')
+                    choose = int(input('Выберите 1 - камень,\n2 - ножницы,\n3 - бyмага:'))
+                    robot_choose = int(random.randint(1,3))
+                elif choose == 3 and robot_choose == 2:
+                    win2 += 1
+                    print(f'Соперник выбрал {dictionary[robot_choose]}')
+                    print('Вы проиграли!')
+                    print(f'Счёт: {win1} : {win2} ')
+                    choose = int(input('Выберите 1 - камень,\n2 - ножницы,\n3 - бyмага:'))
+                    robot_choose = int(random.randint(1,3))
+                elif choose == 3 and robot_choose == 3:
+                    print(f'Соперник выбрал {dictionary[robot_choose]}')
+                    print('Ничья')
+                    print(f'Счёт: {win1} : {win2} ')
+                    choose = int(input('Выберите 1 - камень,\n2 - ножницы,\n3 - бyмага:'))
+                    robot_choose = int(random.randint(1,3))
+            
+                
+            else:
+                print('Не нарушайте!')
+                break
+        else:
+            break
+    print(f'Счёт: {win1} : {win2} ')
+    if win1 > win2:
+        print('Вы выиграли!')
+    else:
+        print('Вы проиграли!')
+            
+            
+number = int(input('До какого счёта играем? '))    
+game(number)

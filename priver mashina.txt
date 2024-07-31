@@ -1,0 +1,33 @@
+eng = 'abcdefghijklmnopqrstvwxyzi'
+rus = 'абцдефгхижклмнопкрстввхьзы'
+word = 'семья'
+
+
+def game(w, en, ru):
+    en = list(en)
+    ru = list(ru)
+    w = list(w)
+    new_w = ''
+    ru.append('ш')
+    en.append('sh')
+    ru.append('я')
+    en.append('ya')
+    ru.append('ч')
+    en.append('ch')
+    ru.append('ё')
+    en.append('yo')
+    ru.append('ю')
+    en.append('yu')
+    
+    for i in w:
+        if i in ru:
+            new_w += en[ru.index(i)]
+        if i == 'ь' or i == 'ъ':
+            continue
+            
+    return new_w
+    
+result = game(word, eng, rus)
+
+print(result)
+     
